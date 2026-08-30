@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="The Excuse Court: submit your excuse, face three judges, and receive your official verdict certificate." />
+  <title>The Excuse Court ⚖️</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fredericka+the+Great&family=Special+Elite&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="grain"></div>
+
+  <header class="site-header">
+    <a class="brand" href="#" aria-label="The Excuse Court home">⚖️ THE EXCUSE COURT</a>
+    <span class="case-stamp">COURT OF QUESTIONABLE JUSTICE</span>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-copy">
+        <p class="eyebrow">CASE NO. <span id="caseNumber">EC-0001</span></p>
+        <h1>Defend your<br><span>excuse.</span></h1>
+        <p class="intro">Three judges. One suspicious story. Zero mercy.</p>
+
+        <form id="excuseForm" class="excuse-form">
+          <label for="excuse">Your excuse, defendant:</label>
+          <textarea id="excuse" maxlength="240" required placeholder='“Sir, my WiFi was emotionally unstable…”'></textarea>
+          <div class="form-footer">
+            <span id="charCount">0 / 240</span>
+            <button type="submit" class="button primary">SUBMIT TO THE COURT <span>→</span></button>
+          </div>
+        </form>
+      </div>
+
+      <div class="court-doodle" aria-hidden="true">
+        <div class="gavel">⚒</div>
+        <div class="scales">⚖</div>
+        <div class="scribble">ORDER!<br>ORDER!</div>
+      </div>
+    </section>
+
+    <section id="courtroom" class="courtroom hidden" aria-live="polite">
+      <div class="court-heading">
+        <div>
+          <p class="eyebrow">THE HONOURABLE PANEL</p>
+          <h2>Judgment is in session.</h2>
+        </div>
+        <div class="docket">DOCKET <span id="docketNumber">EC-0001</span></div>
+      </div>
+
+      <div class="judges">
+        <article class="judge-card" id="judge1">
+          <div class="judge-avatar">👨‍⚖️</div>
+          <span class="judge-number">JUDGE 01</span>
+          <h3>THE STRICT ONE</h3>
+          <div class="gavel-mini">⚒</div>
+          <p class="judge-verdict">Awaiting evidence...</p>
+        </article>
+
+        <article class="judge-card" id="judge2">
+          <div class="judge-avatar">🧐</div>
+          <span class="judge-number">JUDGE 02</span>
+          <h3>THE IMPRESSED ONE</h3>
+          <div class="gavel-mini">⚒</div>
+          <p class="judge-verdict">Awaiting evidence...</p>
+        </article>
+
+        <article class="judge-card" id="judge3">
+          <div class="judge-avatar">😏</div>
+          <span class="judge-number">JUDGE 03</span>
+          <h3>THE HYPOCRITE</h3>
+          <div class="gavel-mini">⚒</div>
+          <p class="judge-verdict">Awaiting evidence...</p>
+        </article>
+      </div>
+
+      <div class="verdict-panel" id="verdictPanel">
+        <p class="eyebrow">FINAL VERDICT</p>
+        <div class="verdict-word" id="verdictWord">GUILTY</div>
+        <p class="verdict-line" id="verdictLine">But suspiciously believable.</p>
+        <div class="verdict-actions">
+          <button class="button primary" id="certificateBtn">GET MY CERTIFICATE ↓</button>
+          <button class="button secondary" id="shareBtn">SHARE THIS VERDICT ↗</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="how-it-works">
+      <p class="eyebrow">THE PROCESS</p>
+      <h2>Three judges. One fate.</h2>
+      <div class="steps">
+        <div><strong>01</strong><span>Submit your excuse</span></div>
+        <div><strong>02</strong><span>Survive the judges</span></div>
+        <div><strong>03</strong><span>Collect your evidence</span></div>
+      </div>
+    </section>
+
+    <section class="certificate-section hidden" id="certificateSection">
+      <div class="certificate-wrap">
+        <div class="certificate" id="certificate">
+          <div class="cert-border"></div>
+          <div class="cert-inner">
+            <p class="cert-small">THE EXCUSE COURT • COURT OF QUESTIONABLE JUSTICE</p>
+            <div class="cert-emblem">⚖️</div>
+            <h2>OFFICIAL EXCUSE<br>CERTIFICATE</h2>
+            <p class="cert-label">THIS DOCUMENT HEREBY RECORDS THAT</p>
+            <p class="cert-name" id="certName">THE DEFENDANT</p>
+            <p class="cert-label">SUBMITTED THE FOLLOWING DEFENCE</p>
+            <blockquote id="certExcuse">“...”</blockquote>
+            <div class="cert-rule"></div>
+            <p class="cert-verdict">VERDICT: <strong id="certVerdict">GUILTY, BUT BELIEVABLE</strong></p>
+            <p class="cert-date" id="certDate"></p>
+            <div class="cert-signatures">
+              <span>THE COURT</span>
+              <span>THE RECORDS CLERK</span>
+            </div>
+            <p class="cert-case">CASE <span id="certCase">EC-0001</span></p>
+          </div>
+        </div>
+        <div class="certificate-actions">
+          <button class="button primary" id="downloadPngBtn">DOWNLOAD PNG ↓</button>
+          <button class="button secondary" id="downloadSvgBtn">DOWNLOAD SVG ↓</button>
+          <button class="button secondary" id="copyBtn">COPY VERDICT</button>
+        </div>
+        <p class="share-note">Tip: the share button works best on mobile and browsers that support the Web Share API.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <span>⚖️ Guilty until proven hilarious.</span>
+    <span>Built for bad excuses & questionable evidence.</span>
+  </footer>
+
+  <div class="toast" id="toast" role="status"></div>
+  <script src="script.js"></script>
+</body>
+</html>
